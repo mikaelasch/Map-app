@@ -15,7 +15,7 @@ export default function App() {
   const[keyword, setKeyword] = useState('');
 
   const getAddress = () => {
-    fetch('http://www.mapquestapi.com/geocoding/v1/address?key=6xTUGn75DFY9mRXJ6osTNeWGFyRJYLPW&location=${keyword}')
+    fetch('http://www.mapquestapi.com/geocoding/v1/address?key=6xTUGn75DFY9mRXJ6osTNeWGFyRJYLPW&location=' + keyword)
       .then(response => response.json())
       .then(data => setRegion({latitude: data.results[0].locations[0].latLng.lat, longitude: data.results[0].locations[0].latLng.lng }))
       .catch(error => {
